@@ -1,0 +1,54 @@
+﻿@model IEnumerable<IEXTrading.Models.outputModel>
+
+@{
+    ViewData["Title"] = "Buy Or Sell Stocks";
+}
+
+<h2>BuyOrSell</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.companyName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.symbol)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.close)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.value)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.companyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.symbol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.close)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.value)
+            </td>
+
+        </tr>
+}
+    </tbody>
+</table>
+<table colspan="4">
+	<caption>Self Reflection:</caption>
+	<caption>We have created a cshtml page to accomodate the new page and handled the code from the API. The API contains about 100 records for which the 
+	API iterated 100 times to get the data needed. The functions-GetStats contain the code for data pull and the function output() contains code for displaying 
+	the Top 5 stocks. However, the API seems not to display some of the company names. This assignment gave us an opportunity to learn stocks and
+	various attributes</caption>
+</table>
